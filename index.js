@@ -6,11 +6,14 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const dishRouter = require('./routes/dishRouter');
+const leaderRouter = require('./routes/leaderRouter');
+const promoRouter = require('./routes/promoRouter');
 
 app.use(morgan('dev'));
 
 app.use('/dishes', dishRouter);
-
+app.use('/leadership', leaderRouter);
+app.use('/promotions', promoRouter);
 
 app.use(express.static(__dirname + '/public'));
 
